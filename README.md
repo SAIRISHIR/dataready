@@ -200,4 +200,4 @@ Please open an issue first for major changes.
 
 ## License
 
-MIT © 2025 — free to use, modify, and distribute.
+MIT © 2026 — free to use, modify, and distribute.
