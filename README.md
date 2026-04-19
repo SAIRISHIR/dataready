@@ -188,7 +188,7 @@ dr = DataReady(df[feature_cols], target_col="label")
 Pull requests are welcome! To get started:
 
 ```bash
-git clone https://github.com/yourusername/dataready.git
+git clone https://github.com/ySAIRISHIR/dataready.git
 cd dataready
 pip install -e ".[dev]"
 pytest tests/
