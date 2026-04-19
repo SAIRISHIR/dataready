@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "dataready"
+version = "0.2.0"
+description = "ML dataset quality scanner, scorer, and auto-fixer"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+  { name = "Your Name", email = "you@example.com" }
+]
+keywords = [
+  "machine-learning", "data-quality", "data-cleaning",
+  "eda", "preprocessing", "pandas", "mlops", "data-science"
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+  "pandas>=1.5",
+  "numpy>=1.23",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.0",
+  "pytest-cov",
+  "build",
+  "twine",
+]
+
+[project.urls]
+Homepage      = "https://github.com/yourusername/dataready"
+Documentation = "https://github.com/yourusername/dataready#readme"
+Repository    = "https://github.com/yourusername/dataready"
+"Bug Tracker" = "https://github.com/yourusername/dataready/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["dataready*"]

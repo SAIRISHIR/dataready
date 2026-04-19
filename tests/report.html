@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>DataReady Report</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI",system-ui,sans-serif;background:#0f1117;color:#e0e0e0;padding:32px 24px}
+  .container{max-width:980px;margin:0 auto}
+  h1{font-size:24px;font-weight:600;margin-bottom:4px}
+  h2{font-size:15px;font-weight:500;margin-bottom:14px;color:#aaa;
+      border-bottom:1px solid #2e3150;padding-bottom:8px;margin-top:4px}
+  .meta{font-size:12px;color:#666;margin-bottom:28px}
+  .card{background:#1a1d2e;border:1px solid #2e3150;border-radius:10px;
+         padding:20px;margin-bottom:18px}
+  /* score */
+  .score-row{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+  .score-big{font-size:52px;font-weight:700;color:#2cb67d}
+  .grade{font-size:32px;font-weight:600;color:#2cb67d;margin-left:8px}
+  .score-label{font-size:13px;color:#aaa;margin-top:4px}
+  .bar-wrap{flex:1;min-width:120px;background:#252840;border-radius:4px;height:14px;overflow:hidden}
+  .bar-fill{height:100%;border-radius:4px;background:#2cb67d;width:100.0%}
+  /* grids */
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  @media(max-width:600px){.grid3,.grid4{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:#252840;border-radius:8px;padding:12px 14px;text-align:center}
+  .stat .val{font-size:22px;font-weight:600;color:#7c6af7}
+  .stat .lbl{font-size:11px;color:#666;margin-top:2px}
+  /* issues */
+  .issue{border-left:3px solid;padding:12px 14px;margin-bottom:10px;
+          border-radius:0 6px 6px 0;background:#13151f}
+  .issue.critical{border-color:#f75757}
+  .issue.warning{border-color:#f7b731}
+  .issue.info{border-color:#7c6af7}
+  .badge{display:inline-block;font-size:10px;padding:2px 8px;
+          border-radius:10px;font-weight:600;margin-right:6px}
+  .badge-critical{background:rgba(247,87,87,.15);color:#f75757}
+  .badge-warning{background:rgba(247,183,49,.15);color:#f7b731}
+  .badge-info{background:rgba(124,106,247,.15);color:#7c6af7}
+  .issue-desc{font-size:13px;margin:4px 0}
+  .issue-cols{font-size:11px;color:#666;margin-bottom:4px}
+  .issue-fix{font-size:12px;color:#2cb67d}
+  .issue-note{font-size:12px;color:#f7b731}
+  /* table */
+  table{width:100%;border-collapse:collapse;font-size:12px}
+  th{background:#252840;padding:8px 10px;text-align:left;color:#aaa;font-weight:500}
+  td{padding:7px 10px;border-bottom:1px solid #1e2130;color:#ccc;word-break:break-word}
+  tr:last-child td{border-bottom:none}
+  /* breakdown */
+  .bd-item{display:flex;justify-content:space-between;font-size:13px;
+            padding:6px 0;border-bottom:1px solid #1e2130}
+  .bd-item:last-child{border-bottom:none}
+  footer{text-align:center;font-size:11px;color:#444;margin-top:28px}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>DataReady — Quality Report</h1>
+  <div class="meta">
+    Generated: 2026-04-19 12:59:22 &nbsp;|&nbsp; Shape: 500 rows × 10 columns
+    &nbsp;|&nbsp; Issues: 0
+  </div>
+
+  <div class="card">
+    <h2>Quality Score</h2>
+    <div class="score-row">
+      <div>
+        <span class="score-big">100.0</span>
+        <span class="grade">A+</span>
+        <div class="score-label">Perfect — dataset is ML-ready</div>
+      </div>
+      <div class="bar-wrap"><div class="bar-fill"></div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Overview</h2>
+    <div class="grid4"><div class="stat"><div class="val">0</div><div class="lbl">Null cols</div></div><div class="stat"><div class="val">0</div><div class="lbl">Duplicate rows</div></div><div class="stat"><div class="val">0</div><div class="lbl">High skew cols</div></div><div class="stat"><div class="val">5</div><div class="lbl">Outlier cols</div></div><div class="stat"><div class="val">0</div><div class="lbl">High cardinality</div></div><div class="stat"><div class="val">0</div><div class="lbl">ID columns</div></div><div class="stat"><div class="val">0</div><div class="lbl">Corr. pairs</div></div><div class="stat"><div class="val">0</div><div class="lbl">Leakage suspects</div></div><div class="stat"><div class="val">0</div><div class="lbl">Encoding issues</div></div><div class="stat"><div class="val">0</div><div class="lbl">Bool-as-string</div></div><div class="stat"><div class="val">0</div><div class="lbl">Num-as-string</div></div><div class="stat"><div class="val">0</div><div class="lbl">Whitespace cols</div></div></div>
+  </div>
+
+  <div class="card">
+    <h2>Score Breakdown</h2>
+    <p style="color:#2cb67d">No deductions — perfect score!</p>
+  </div>
+
+  <div class="card">
+    <h2>Issues (0 found)</h2>
+    <p style="color:#2cb67d">✓ No issues found.</p>
+  </div>
+
+  <div class="card">
+    <h2>Column Details</h2>
+    <table>
+  <thead><tr>
+    <th>Column</th><th>dtype</th><th>Inferred</th>
+    <th>Null %</th><th>Unique</th><th>Skew</th><th>Flags</th>
+  </tr></thead>
+  <tbody><tr>
+  <td>gender</td><td>object</td><td>categorical</td>
+  <td>0%</td><td>?</td><td></td><td></td>
+</tr><tr>
+  <td>age</td><td>int64</td><td>numeric</td>
+  <td>0%</td><td>5</td><td>0.01</td><td></td>
+</tr><tr>
+  <td>study_hours_per_week</td><td>int64</td><td>numeric</td>
+  <td>0%</td><td>29</td><td>0.08</td><td></td>
+</tr><tr>
+  <td>attendance_rate</td><td>float64</td><td>numeric</td>
+  <td>0%</td><td>326</td><td>-0.09</td><td></td>
+</tr><tr>
+  <td>parent_education</td><td>object</td><td>categorical</td>
+  <td>0%</td><td>4</td><td></td><td></td>
+</tr><tr>
+  <td>internet_access</td><td>boolean</td><td>boolean</td>
+  <td>0%</td><td>2</td><td></td><td></td>
+</tr><tr>
+  <td>extracurricular</td><td>boolean</td><td>boolean</td>
+  <td>0%</td><td>2</td><td></td><td></td>
+</tr><tr>
+  <td>previous_score</td><td>int64</td><td>numeric</td>
+  <td>0%</td><td>66</td><td>-0.00</td><td></td>
+</tr><tr>
+  <td>final_score</td><td>int64</td><td>numeric</td>
+  <td>0%</td><td>70</td><td>-0.06</td><td></td>
+</tr><tr>
+  <td>passed</td><td>boolean</td><td>boolean</td>
+  <td>0%</td><td>2</td><td></td><td></td>
+</tr></tbody>
+</table>
+  </div>
+
+  <footer>Generated by DataReady &mdash; open-source ML data quality library</footer>
+</div>
+</body>
+</html>
